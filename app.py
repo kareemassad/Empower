@@ -14,6 +14,16 @@ GoogleMaps(
 
 
 @app.route("/")
+def index():
+    return render_template('index.html')
+
+
+@app.route("/newProtest")
+def newProtest():
+    return render_template('newProtest.html')
+
+
+@app.route("/nearMe")
 def mapview():
     lat = 40.7128
     long = 74.0060
@@ -42,6 +52,7 @@ def mapview():
         'nearMe.html',
         circlemap=circlemap,
         GOOGLEMAPS_KEY=request.args.get('apikey'),
+        location='New York City'
     )
 
 

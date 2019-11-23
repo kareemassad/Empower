@@ -1,1 +1,0 @@
-mongodb+srv://[username]:[password]@[projectname]-gktww.gcp.mongodb.net/[authDB]

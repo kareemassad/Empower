@@ -6,34 +6,12 @@ from googlemaps import convert
 import pymongo
 import googlemaps
 
-from pymongo import MongoClient
+client = pymongo.MongoClient(
+    "mongodb+srv://gabrielelkadki:Pn1plAR6hhGyOoL1@revolution-uimiu.azure.mongodb.net/test?retryWrites=true&w=majority"
+)
 
-class Connect(object):
-    @staticmethod    
-    def get_connection():
-        return MongoClient("mongodb+srv://alois:Citronorange01@empower-ehryh.azure.mongodb.net/test?retryWrites=true&w=majority")
-    
-
-from pymongo import MongoClient
-
-connection = Connect.get_connection()
-
-
-db = connection.empower
-cursor = db.inventory.find({})
-
-
-
-from pprint import pprint
-pprint(cursor)
-for inventory in cursor:
-     print(inventory)
-
-
-# client = pymongo.MongoClient("mongodb+srv://alois:CitronOrange01@empower-ehryh.azure.mongodb.net/test?retryWrites=true&w=majority", maxPoolSize=50, connect=False)
-# db = pymongo.database.Database(client, 'mydatabase')
-# col = pymongo.collection.Collection(db, 'mycollection')
-
+db = client.test
+collection = db.coordinates
 
 
 app = Flask(__name__, template_folder="templates")
@@ -113,22 +91,31 @@ def map_view():
         response = response[0]
     resp_len = len(response['address_components'])
     location = response['address_components'][int(resp_len/2 - 2)]['long_name']
-    lat = (response['geometry']['location']['lat'])
-    lng = (response['geometry']['location']['lng'])
+    search_lat = (response['geometry']['location']['lat'])
+    search_lng = (response['geometry']['location']['lng'])
+
+    markers = [{
+        'icon': '//maps.google.com/mapfiles/ms/icons/red-dot.png',
+        'lat': search_lat,
+        'lng': search_lng
+    }]
+
+    my_cursor = collection.find()
+    for item in my_cursor:
+        markers.append({
+            "icon": '//maps.google.com/mapfiles/ms/icons/green-dot.png',
+            'lat': item['lat'],
+            'lng': item['lng'],
+            'infobox': item['bio']
+        })
+        print(item)
+
     circlemap = Map(
         identifier="circlemap",
         varname="circlemap",
-        lat=lat,
-        lng=lng,
-        markers=[
-            {
-                'icon': '//maps.google.com/mapfiles/ms/icons/green-dot.png',
-                'lat': lat,
-                'lng': lng,
-                'infobox': "Hello I am a Protest, Come Protest!"
-            }
-
-        ],
+        lat=search_lat,
+        lng=search_lng,
+        markers=markers,
         style=(
             "height:500px;"
             "width:80%;"
@@ -149,7 +136,17 @@ def map_view():
 def new_protest():
     global address
     address = request.form['address']
+    collection.insert_one({
+        "_id": 1,
+        "name": "March for Kareem rights!",
+        "lat": 34.8021,
+        "lng": 38.9968,
+        "confirm_count": -2,
+        "Bio": "Kareem rights are important! They're people too.",
+    })
+
     return redirect(url_for('map_view'))
+
 
 @app.route('/<path:path>')
 def notFound(path):

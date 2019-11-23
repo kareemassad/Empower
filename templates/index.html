@@ -2,33 +2,69 @@
 <html>
 
 <head>
-    <!-- SCSS -->
-    <link rel="stylesheet" href="style.scss">
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Revolution</title>
+    <title>Revolve</title>
 
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'styles/styles.css')}}">
+    <!--Favicon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/6ba355e457.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
 </head>
 
 <body>
-    <nav>
-        <div class="container">
-            <a class="logo" href="index.html">
-                <span class="lite">Revolution</span>
-            </a>
-            <div class="links">
-                <a href="newProtest" target="_blank">Link1</a>
-                <a href="source" target="_blank">Link1</a>
-                <a href="source" target="_blank">Link1</a>
+    <section id="title">
+        <div class="container-fluid">
+            <!-- Nav Bar -->
+            <nav class="navbar navbar-expand-lg navbar-dark">
+
+                <a class="navbar-brand" href="">Revolve</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#footer">Live Map</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#pricing">Action</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#cta">Blank</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+            <!-- Title -->
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="big-heading">Don't turn a blind eye. Find out about local movements.</h1>
+                    <button type="button" class="btn btn-dark btn-lg download-button"><i class="fas fa-search-location"></i> Near Me</button>
+                    <button type="button" class="btn btn-light btn-lg download-button"><i class="fas fa-exclamation-circle"></i> Take Action</button>
+                </div>  
             </div>
         </div>
-    </nav>
-    <h1>Revolution</h1>
-
-    <a href="nearMe">Near Me</a>
-
-</body>
-
-</html>
+    </section>

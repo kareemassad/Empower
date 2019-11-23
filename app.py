@@ -4,6 +4,7 @@ from flask import Flask, render_template, request, redirect, url_for
 from flask_googlemaps import GoogleMaps
 from flask_googlemaps import Map
 from googlemaps import convert
+import pymongo
 import googlemaps
 
 
@@ -15,7 +16,7 @@ GoogleMaps(
     key=key
 )
 
-address = 'White House'
+address = 'Moscow'
 
 
 def geocode(address=None, components=None, bounds=None, region=None,

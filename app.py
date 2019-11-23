@@ -118,9 +118,7 @@ def map_view():
         location=location
     )
     
-@app.route('/<path:path>')
-def notFound(path):
-    return render_template('404.html')
+
 
 
 @app.route('/new_protest', methods=['POST'])
@@ -128,6 +126,10 @@ def new_protest():
     global address
     address = request.form['address']
     return redirect(url_for('map_view'))
+
+@app.route('/<path:path>')
+def notFound(path):
+    return render_template('404.html')
 
 
 if __name__ == "__main__":

@@ -324,7 +324,7 @@ def mapview():
 
 
     return render_template(
-        'example.html',
+        'index.html',
         mymap=mymap,
         sndmap=sndmap,
         trdmap=trdmap,
@@ -387,7 +387,7 @@ def fullmap():
         # zoom="5"
     )
     return render_template(
-        'example_fullmap.html',
+        'index.html',
         fullmap=fullmap,
         GOOGLEMAPS_KEY=request.args.get('apikey')
     )

@@ -54,6 +54,10 @@ def mapview():
         GOOGLEMAPS_KEY=request.args.get('apikey'),
         location='New York City'
     )
+    
+@app.route('/<path:path>')
+def notFound(path):
+    return render_template('404.html')
 
 
 if __name__ == "__main__":

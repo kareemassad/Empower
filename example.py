@@ -21,6 +21,10 @@ GoogleMaps(
 def index():
     return render_template('index.html')
 
+@app.route("/newProtest")
+def newProtest():
+    return render_template('newProtest.html')
+
 @app.route("/nearMe")
 def mapview():
     mymap = Map(

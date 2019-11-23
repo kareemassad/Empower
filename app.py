@@ -1,11 +1,39 @@
 
-
 from flask import Flask, render_template, request, redirect, url_for
 from flask_googlemaps import GoogleMaps
 from flask_googlemaps import Map
 from googlemaps import convert
 import pymongo
 import googlemaps
+
+from pymongo import MongoClient
+
+class Connect(object):
+    @staticmethod    
+    def get_connection():
+        return MongoClient("mongodb+srv://alois:Citronorange01@empower-ehryh.azure.mongodb.net/test?retryWrites=true&w=majority")
+    
+
+from pymongo import MongoClient
+
+connection = Connect.get_connection()
+
+
+db = connection.empower
+cursor = db.inventory.find({})
+
+
+
+from pprint import pprint
+pprint(cursor)
+for inventory in cursor:
+     print(inventory)
+
+
+# client = pymongo.MongoClient("mongodb+srv://alois:CitronOrange01@empower-ehryh.azure.mongodb.net/test?retryWrites=true&w=majority", maxPoolSize=50, connect=False)
+# db = pymongo.database.Database(client, 'mydatabase')
+# col = pymongo.collection.Collection(db, 'mycollection')
+
 
 
 app = Flask(__name__, template_folder="templates")

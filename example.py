@@ -17,8 +17,11 @@ GoogleMaps(
 
 # NOTE: this example is using a form to get the apikey
 
-
 @app.route("/")
+def index():
+    return render_template('index.html')
+
+@app.route("/nearMe")
 def mapview():
     mymap = Map(
         identifier="view-side",  # for DOM element
@@ -324,7 +327,7 @@ def mapview():
 
 
     return render_template(
-        'index.html',
+        'nearMe.html',
         mymap=mymap,
         sndmap=sndmap,
         trdmap=trdmap,
@@ -387,7 +390,7 @@ def fullmap():
         # zoom="5"
     )
     return render_template(
-        'index.html',
+        'nearMe.html',
         fullmap=fullmap,
         GOOGLEMAPS_KEY=request.args.get('apikey')
     )

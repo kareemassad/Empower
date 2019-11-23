@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ url_for('static',filename = 'styles/styles.css')}}">
+    <link rel="stylesheet" href="/static/styles/styles.css">
     <!--Favicon-->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- Font Awesome -->
@@ -31,30 +31,33 @@
 </head>
 
 <body>
+
     <section id="title">
         <div class="container-fluid">
             <!-- Nav Bar -->
-            <nav class="navbar navbar-expand-lg navbar-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
                 <a class="navbar-brand" href="">Revolve</a>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <div class="collapse navbar-collapse" id="basicExampleNav">
 
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#footer">Live Map</a>
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home
+                                <span class="sr-only">(current)</span>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#pricing">Action</a>
+                            <a class="nav-link" href="nearMe">Live Map</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#cta">Blank</a>
+                            <a class="nav-link" href="action">Action</a>
                         </li>
                     </ul>
-
                 </div>
             </nav>
             <!-- Title -->
@@ -62,9 +65,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="big-heading">Don't turn a blind eye. Find out about local movements.</h1>
-                    <button type="button" class="btn btn-dark btn-lg download-button"><i class="fas fa-search-location"></i> Near Me</button>
-                    <button type="button" class="btn btn-light btn-lg download-button"><i class="fas fa-exclamation-circle"></i> Take Action</button>
-                </div>  
+                    <button type="button" class="btn btn-dark btn-lg download-button"><i
+                            class="fas fa-search-location"></i> Near Me</button>
+                    <button type="button" class="btn btn-light btn-lg download-button"><i
+                            class="fas fa-exclamation-circle"></i> Take Action</button>
+                </div>
             </div>
         </div>
     </section>

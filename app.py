@@ -15,7 +15,7 @@ GoogleMaps(
     key=key
 )
 
-address = '373 Brettonwood Ridge'
+address = 'White House'
 
 
 def geocode(address=None, components=None, bounds=None, region=None,
@@ -76,19 +76,14 @@ def newProtest():
 @app.route("/nearMe")
 def map_view():
     response = geocode(address=address, region='Canada')
+    print(response)
     if not response:
         print("INVALID ADDRESS")
         return redirect(url_for('index'))
     else:
-        response = geocode(address=address, region='Canada')[0]
+        response = response[0]
     resp_len = len(response['address_components'])
-    if resp_len == 1:
-        index_shift = 0
-    elif resp_len == 2:
-        index_shift = 1
-    else:
-        index_shift = 2
-    location = response['address_components'][index_shift]['long_name']
+    location = response['address_components'][int(resp_len/2 - 2)]['long_name']
     lat = (response['geometry']['location']['lat'])
     lng = (response['geometry']['location']['lng'])
     circlemap = Map(

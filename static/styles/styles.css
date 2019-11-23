@@ -38,7 +38,7 @@ p{
 .nav-link{
     font-size: 1.2rem;
     font-family: 'Lato';
-    font-weight: 300;
+    font-weight: 500;
 
 }
 
@@ -56,7 +56,7 @@ p{
 /* Title */
 #title{
     /* background-color: #4eb3cc; FE3C72; #fd5068 #FD297B  */
-    background-image: linear-gradient(#4eb3cc, rgba(255, 255, 255, 0.822));
+    background-image: linear-gradient(#416ab6, rgba(255, 255, 255, 0.822));
     color: white;
 }
 

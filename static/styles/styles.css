@@ -83,6 +83,9 @@ form {
     /* #f1f1f1 */
     border: 4px solid grey;
 }
+.form-group{
+    margin-bottom: 0;
+}
 
 /* Add some padding and a grey background color to containers */
 .container {
@@ -165,3 +168,8 @@ input[type=submit]:hover {
 .modal-backdrop {
     z-index: 10;
 }
+
+.colorButton{
+    background-color:  #ffb88c;
+}
+

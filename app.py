@@ -1,9 +1,12 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
+from flask_session import Session
 from flask_googlemaps import GoogleMaps
 from flask_googlemaps import Map
 from googlemaps import convert
 import pymongo
 import googlemaps
+import uuid
+
 
 client = pymongo.MongoClient(
     "mongodb+srv://gabrielelkadki:Pn1plAR6hhGyOoL1@revolution-uimiu.azure.mongodb.net/test?retryWrites=true&w=majority"
@@ -14,7 +17,11 @@ collection = db.coordinates
 
 
 app = Flask(__name__, template_folder="templates")
-# you can also pass key here
+app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+app.config['SESSION_TYPE'] = 'filesystem'
+
+Session(app)
+
 key = "AIzaSyDzLfe1r1aV48C15pGg_-PI0m0upPwFi3U"
 GoogleMaps(
     app,
@@ -69,6 +76,7 @@ def geocode(address=None, components=None, bounds=None, region=None,
 
 @app.route("/")
 def index():
+    session["state"] = str(uuid.uuid4())
     return render_template('index.html')
 
 
@@ -77,12 +85,12 @@ def newProtest():
     return render_template('newProtest.html')
 
 
-@app.route("/nearMe")
+@app.route("/nearMe", methods=['GET', 'POST'])
 def map_view():
-    # location = request.form['location']]
-    location = 'Iraq'
+    if not session.get("location"):
+        return redirect(url_for("index"))
+    location = session['location']
     response = geocode(address=location, region='Canada')
-    print(response)
     if not response:
         print("INVALID ADDRESS")
         return redirect(url_for('index'))
@@ -110,7 +118,6 @@ def map_view():
             'lng': item['lng'],
             'infobox': title.format(item['title']) + par.format(item['bio']) + par.format(link.format(item['url']))
         })
-        print(item)
 
     circlemap = Map(
         identifier="circlemap",
@@ -141,13 +148,18 @@ def new_protest():
     title = request.form['title']
     location = request.form['location']
     response = geocode(address=location)
+    if not response:
+        return redirect(url_for('index'))
+    else:
+        response = response[0]
+    session['location'] = location
     latitude = response['geometry']['location']['lat']
     longitude = response['geometry']['location']['lng']
     description = request.form['description']
     date = request.form['date']
     time = request.form['time']
     url = request.form['url']
-    _id = collection.count + 1
+    _id = collection.count() + 1
     collection.insert_one({
         "_id": _id,
         "title": title,
@@ -159,7 +171,7 @@ def new_protest():
         "bio": description,
         "url": url
     })
-    return redirect(url_for('map_view'))
+    return redirect(url_for('map_view', location=location))
 
 
 @app.route('/<path:path>')

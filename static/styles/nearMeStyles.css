@@ -1,0 +1,61 @@
+/* font-family: 'Lato', sans-serif;*/
+h1, h2, h3, h4, h5, h6{
+    font-family: "Lato";
+    font-weight: 700;
+    color: white;
+}
+body{
+    font-family: "Lato";
+    background-image: linear-gradient(#de6262 , #ffb88c);
+    padding-bottom: 20px;
+}
+p{
+    color: #848484;
+}
+
+/* Headings */
+.big-heading{
+    font-family: "Lato";
+    font-size: 3.5rem;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+/* Containers */
+.container-fluid{
+    padding: 3% 15% 0%;
+}
+.container-fluidish{
+    padding: 0% 1% 1%;
+    
+}
+
+/* Navigation Bar */
+.navbar{
+    padding: 0 0 1.5rem;
+}
+.navbar-brand{
+    font-family: 'Lato';
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.nav-item{
+    padding: 0 18px;
+}
+.nav-link{
+    font-size: 1.2rem;
+    font-family: 'Lato';
+    font-weight: 500;
+}
+/* Maps */
+#maps{
+    /*  416ab6 > rgba(255, 255, 255, 0.664)//(#de6262, #ffb88c)// (#ffafbd, #ffc3a0)*/
+    /* background-image: linear-gradient(#de6262 , #ffb88c); */
+    color: white;
+}
+.borderThang{
+    border: 2px solid black;
+}
+.callSign{
+    text-align: left;
+}

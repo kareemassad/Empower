@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <title>Actions</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzLfe1r1aV48C15pGg_-PI0m0upPwFi3U&libraries=places"></script>
+
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -85,18 +87,52 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" data-toggle="modal" data-target=".bd-example-modal-lg">Live
+                            <a class="nav-link" href="map_view" data-toggle="modal" data-target=".bd-example-modal-lg">Live
                                 Map</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="actions">Action</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/rally_form">Rally</a>
+                            <a class="nav-link" href="rally_form">Rally</a>
                         </li>
                     </ul>
                 </div>
             </nav>
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+                            aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="enterCityTitle">Enter your current location below
+                                        </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div
+                                            class="container justify-content-center align-items-center d-flex flex-column">
+
+
+                                            <form action="/get_city" method="POST" style="border: none;width:90%">
+                                                <div class="form-group" style="max-height: 500px; height: 3rem">
+                                                    <input id="searchTextField" type="text" name="city" size="50">
+                                                </div>
+
+                                                <div class="modal-footer">
+                                                    <button class="btn btn download-button colorButton">Submit!</button>
+
+                                                    <button type="button" class="btn btn-dark btn download-button"
+                                                        data-dismiss="modal">Close</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
     </section>
     <div class="container-fluid align-items-center">
         <h2>Rallies around the world</h2>
@@ -104,7 +140,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                        <a class="collapseHeader" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
                             2019 Hong Kong protests</a>
                     </h4>
                 </div>
@@ -147,7 +183,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                        <a class="collapseHeader" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
                             2019 France Protests</a>
                     </h4>
                 </div>
@@ -178,7 +214,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                        <a class="collapseHeader" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
                             2019 Chile Protests</a>
                     </h4>
                 </div>
@@ -210,7 +246,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                        <a class="collapseHeader" data-toggle="collapse" data-parent="#accordion" href="#collapse4">
                             2019 Lebanese protests</a>
                     </h4>
                 </div>
@@ -243,12 +279,12 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+                        <a class="collapseHeader" data-toggle="collapse" data-parent="#accordion" href="#collapse5">
                             2019 Columbia protests</a>
                     </h4>
                 </div>
                 <div id="collapse5" class="panel-collapse collapse">
-                    <div class="panel-body">More than 200,000 people took to the streets to show discontent over
+                    <div class="panel-body specialID">More than 200,000 people took to the streets to show discontent over
                         possible
                         austerity measures.
                         The protests were mostly peaceful but clashes between demonstrators and police broke out in
@@ -282,6 +318,14 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
 
+<script>
+    function initialize() {
+  var input = document.getElementById('searchTextField');
+  new google.maps.places.Autocomplete(input);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
 
 </body>
 

@@ -134,6 +134,7 @@ def map_view():
 
 @app.route('/newProtest', methods=['POST'])
 def new_protest():
+    title = request.form['title']
     location = request.form['location']
     response = geocode(address=location)
     latitude = response['geometry']['location']['lat']
@@ -141,9 +142,11 @@ def new_protest():
     description = request.form['description']
     date = request.form['date']
     time = request.form['time']
+    url = request.form['url']
+    _id = collection.count + 1
     collection.insert_one({
         "_id": _id,
-        "title": request.form['title'],
+        "title": title,
         "lat": latitude,
         "lng": longitude,
         "confirm_count": 0,

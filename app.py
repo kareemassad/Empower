@@ -105,6 +105,11 @@ def new_rally():
     start_time = request.form['startTime']
     end_time = request.form['endTime']
     url = request.form['url']
+    my_cursor = collection.find()
+    for item in my_cursor:
+        if item['lat'] == latitude and item['lng'] == longitude:
+            longitude += 0.002
+
     _id = collection.count() + 1
     collection.insert_one({
         "_id": _id,

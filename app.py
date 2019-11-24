@@ -108,7 +108,7 @@ def new_rally():
     my_cursor = collection.find()
     for item in my_cursor:
         if item['lat'] == latitude and item['lng'] == longitude:
-            longitude += 0.002
+            longitude += 0.0002
 
     _id = collection.count() + 1
     collection.insert_one({

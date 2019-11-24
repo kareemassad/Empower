@@ -145,12 +145,13 @@ def map_view():
         location=location
     )
 
-@app.route('/nearMe', methods=['POST'])
-def near_me():
+
+@app.route('/get_city', methods=['POST'])
+def get_city():
     city = request.form['city']
     print(city + "!")
     session['location'] = city
-    return redirect(url_for('map_view', location=location))
+    return redirect(url_for('map_view', location=city))
     
 
 @app.route('/newProtest', methods=['POST'])

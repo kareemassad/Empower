@@ -132,19 +132,21 @@ def map_view():
 
 
 
-@app.route('/new_protest', methods=['POST'])
+@app.route('/newProtest', methods=['POST'])
 def new_protest():
     global address
-    address = request.form['address']
+    location = request.form['location']
+    response = geocode(address=location)
+    latitude = response['geometry']['location']['lat']
+    longitude = response['geometry']['location']['lng']
     collection.insert_one({
         "_id": 1,
-        "name": "March for Kareem rights!",
-        "lat": 34.8021,
-        "lng": 38.9968,
+        "name": request.form['title'],
+        "lat": latitude,
+        "lng": longitude,
         "confirm_count": -2,
         "Bio": "Kareem rights are important! They're people too.",
     })
-
     return redirect(url_for('map_view'))
 
 

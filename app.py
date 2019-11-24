@@ -120,7 +120,11 @@ def map_view():
         markers=markers,
         style=(
             "height:500px;"
-            "width:80%;"
+            "width:100%;"
+            "align: center;"
+            "display: block;"
+            "margin-left: auto;"
+            "margin-right: auto;"
                 ),
     )
 

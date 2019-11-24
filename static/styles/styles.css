@@ -153,15 +153,12 @@ input[type=submit]:hover {
         position: static;
         transform: rotate(0);
     }
-
 }
-
 .pac-container {
     background-color: #FFF;
     z-index: 20;
     position: fixed;
     display: inline-block;
-
 }
 
 .modal {

@@ -156,9 +156,9 @@ def map_view():
             'lng': item['lng'],
             'infobox': title.format(item['title']) +
                        par.format(item['bio']) +
-                       par.format(link.format(item['url'])) +
-                       par.format(par.format(item['date'])) +
-                       par.format(par.format(item['start_time'] + '-' + item['end_time']))
+                       par.format(par.format('Date: ' + item['date'])) +
+                       par.format(par.format('Time: ' + item['start_time'] + '-' + item['end_time'])) +
+                       par.format(link.format(item['url']))
         })
 
     circlemap = Map(

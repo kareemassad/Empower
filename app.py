@@ -171,7 +171,8 @@ def new_protest():
     longitude = response['geometry']['location']['lng']
     description = request.form['description']
     date = request.form['date']
-    time = request.form['time']
+    startTime = request.form['startTime']
+    endTime = request.form['endTime']
     url = request.form['url']
     _id = collection.count() + 1
     collection.insert_one({
@@ -181,7 +182,8 @@ def new_protest():
         "lng": longitude,
         "confirm_count": 0,
         "date": date,
-        "time": time,
+        "startTime": startTime,
+        "endTime": endTime,
         "bio": description,
         "url": url
     })

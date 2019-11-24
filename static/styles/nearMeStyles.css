@@ -12,7 +12,9 @@ body{
 p{
     color: #848484;
 }
-
+button{
+    margin:0 0 5px 0;
+}
 /* Headings */
 .big-heading{
     font-family: "Lato";

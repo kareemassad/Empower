@@ -44,3 +44,5 @@ media/*
 venv
 
 /script.py
+/.vscode
+/flask_session/

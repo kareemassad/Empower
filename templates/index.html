@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Revolve</title>
+    <title>Empower</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -37,7 +37,8 @@
 
                 <a href="#" class="navbar-brand">
                     <!-- Logo Image -->
-                    <img src="static\images\newLogo.png" width="50" alt="empower_logo" class="d-inline-block align-middle mr-2">
+                    <img src="static\images\newLogo.png" width="50" alt="empower_logo"
+                        class="d-inline-block align-middle mr-2">
                     <!-- Logo Text -->
                     <span class="text-uppercase font-weight-bold">Empower</span>
                 </a>
@@ -64,7 +65,6 @@
                 </div>
             </nav>
             <!-- Title -->
-
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="big-heading">Don't turn a blind eye. Find out about local movements.</h1>
@@ -72,9 +72,26 @@
                         <button type="button" class="btn btn-light btn-lg download-button"><i
                                 class="fas fa-search-location"></i> Movements Near Me</button>
                         <button type="button" class="btn btn-light btn-lg download-button"><i
-                                class="fas fa-exclamation-circle"></i> Take Action</button> 
+                                class="fas fa-exclamation-circle"></i> Take Action</button>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+    <!-- Form Section -->
+    <section id="newsletter">
+        <form action="action_page.php">
+            <div class="container">
+                <h2>Subscribe to notications about movements near you.</h2>
+            </div>
+            <div class="container" style="background-color:white">
+                <input type="text" placeholder="Email address" name="mail" required>
+                <!-- <label>
+                    <input type="checkbox" checked="checked" name="subscribe"> Daily Newsletter
+                </label> -->
+            </div>
+            <div class="container">
+                <input type="submit" value="Subscribe">
+            </div>
+        </form>
     </section>

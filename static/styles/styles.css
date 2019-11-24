@@ -111,6 +111,31 @@ form {
 .social-icon{
     margin: 20px 10px;
 }
+
+#enterCityTitle {
+    color: black !important;
+}
+
+#searchTextField {
+    max-width: 100%;
+    width: 100%;
+    height: 100%; 
+}
+
+.pac-container {
+    background-color: #FFF;
+    z-index: 20;
+    position: fixed;
+    display: inline-block;
+    float: left;
+}
+.modal{
+    z-index: 20;   
+}
+.modal-backdrop{
+    z-index: 10;        
+}​
+
 /* Media Queries */
 @media (max-width: 1028px){
     #title{
@@ -122,3 +147,4 @@ form {
     }
 
 }
+

@@ -84,6 +84,9 @@ def index():
 def newProtest():
     return render_template('newProtest.html')
 
+@app.route("/enterCity")
+def enterCity():
+    return render_template('enterCity.html')
 
 @app.route("/nearMe", methods=['GET', 'POST'])
 def map_view():
@@ -142,6 +145,13 @@ def map_view():
         location=location
     )
 
+@app.route('/nearMe', methods=['POST'])
+def near_me():
+    city = request.form['city']
+    print(city + "!")
+    session['location'] = city
+    return redirect(url_for('map_view', location=location))
+    
 
 @app.route('/newProtest', methods=['POST'])
 def new_protest():

@@ -138,15 +138,19 @@ def new_protest():
     response = geocode(address=location)
     latitude = response['geometry']['location']['lat']
     longitude = response['geometry']['location']['lng']
-    cursor = collection.find()
-    _id = cursor.count() + 1
+    description = request.form['description']
+    date = request.form['date']
+    time = request.form['time']
     collection.insert_one({
         "_id": _id,
         "title": request.form['title'],
         "lat": latitude,
         "lng": longitude,
         "confirm_count": 0,
-        "bio": request.form['bio'],
+        "date": date,
+        "time": time,
+        "bio": description,
+        "url": url
     })
     return redirect(url_for('map_view'))
 

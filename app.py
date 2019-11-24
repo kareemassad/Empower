@@ -7,14 +7,12 @@ import pymongo
 import googlemaps
 import uuid
 
-
 client = pymongo.MongoClient(
     "mongodb+srv://gabrielelkadki:Pn1plAR6hhGyOoL1@revolution-uimiu.azure.mongodb.net/test?retryWrites=true&w=majority"
 )
 
 db = client.test
 collection = db.coordinates
-
 
 app = Flask(__name__, template_folder="templates")
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
@@ -80,13 +78,48 @@ def index():
     return render_template('index.html')
 
 
-@app.route("/newProtest")
-def newProtest():
-    return render_template('newProtest.html')
+@app.route("/rally_form")
+def rally_form():
+    return render_template('rally_form.html')
+
+
+@app.route('/new_rally', methods=['POST'])
+def new_rally():
+    title = request.form['title']
+    location = request.form['location']
+    response = geocode(address=location)
+    if not response:
+        return redirect(url_for('index'))
+    else:
+        response = response[0]
+    session['location'] = location
+    latitude = response['geometry']['location']['lat']
+    longitude = response['geometry']['location']['lng']
+    description = request.form['description']
+    date = request.form['date']
+    start_time = request.form['startTime']
+    end_time = request.form['endTime']
+    url = request.form['url']
+    _id = collection.count() + 1
+    collection.insert_one({
+        "_id": _id,
+        "title": title,
+        "lat": latitude,
+        "lng": longitude,
+        "confirm_count": 0,
+        "date": date,
+        "start_time": start_time,
+        "end_time": end_time,
+        "bio": description,
+        "url": url
+    })
+    return redirect(url_for('map_view', location=location))
+
 
 @app.route("/enterCity")
 def enterCity():
     return render_template('enterCity.html')
+
 
 @app.route("/nearMe", methods=['GET', 'POST'])
 def map_view():
@@ -99,7 +132,7 @@ def map_view():
     else:
         response = response[0]
     resp_len = len(response['address_components'])
-    location = response['address_components'][int(resp_len/2 - 2)]['long_name']
+    location = response['address_components'][int(resp_len / 2 - 2)]['long_name']
     search_lat = (response['geometry']['location']['lat'])
     search_lng = (response['geometry']['location']['lng'])
 
@@ -118,7 +151,11 @@ def map_view():
             'icon': '//maps.google.com/mapfiles/ms/icons/green-dot.png',
             'lat': item['lat'],
             'lng': item['lng'],
-            'infobox': title.format(item['title']) + par.format(item['bio']) + par.format(link.format(item['url']))
+            'infobox': title.format(item['title']) +
+                       par.format(item['bio']) +
+                       par.format(link.format(item['url'])) +
+                       par.format(par.format(item['date'])) +
+                       par.format(par.format(item['start_time'] + '-' + item['end_time']))
         })
 
     circlemap = Map(
@@ -134,7 +171,7 @@ def map_view():
             "display: block;"
             "margin-left: auto;"
             "margin-right: auto;"
-                ),
+        ),
     )
 
     return render_template(
@@ -152,37 +189,6 @@ def get_city():
     print(city + "!")
     session['location'] = city
     return redirect(url_for('map_view', location=city))
-    
-
-@app.route('/newProtest', methods=['POST'])
-def new_protest():
-    title = request.form['title']
-    location = request.form['location']
-    response = geocode(address=location)
-    if not response:
-        return redirect(url_for('index'))
-    else:
-        response = response[0]
-    session['location'] = location
-    latitude = response['geometry']['location']['lat']
-    longitude = response['geometry']['location']['lng']
-    description = request.form['description']
-    date = request.form['date']
-    time = request.form['time']
-    url = request.form['url']
-    _id = collection.count() + 1
-    collection.insert_one({
-        "_id": _id,
-        "title": title,
-        "lat": latitude,
-        "lng": longitude,
-        "confirm_count": 0,
-        "date": date,
-        "time": time,
-        "bio": description,
-        "url": url
-    })
-    return redirect(url_for('map_view', location=location))
 
 
 @app.route('/<path:path>')
@@ -192,4 +198,4 @@ def notFound(path):
 
 if __name__ == "__main__":
     # app.run(debug=True, use_reloader=True)
-    app.run(debug=True, ssl_context='adhoc', host='104.211.3.182')
+    app.run(debug=True, ssl_context='adhoc')

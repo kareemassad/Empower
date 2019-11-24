@@ -1,4 +1,3 @@
-
 from flask import Flask, render_template, request, redirect, url_for
 from flask_googlemaps import GoogleMaps
 from flask_googlemaps import Map
@@ -128,8 +127,6 @@ def map_view():
         GOOGLEMAPS_KEY=request.args.get('apikey'),
         location=location
     )
-    
-
 
 
 @app.route('/new_protest', methods=['POST'])

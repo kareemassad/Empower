@@ -191,5 +191,5 @@ def notFound(path):
 
 
 if __name__ == "__main__":
-    # app.run(debug=True, use_reloader=True)
-    app.run(debug=True, ssl_context='adhoc', host='104.211.3.182')
+    #app.run(debug=True, ssl_context='adhoc', host='104.211.3.182')
+    app.run(debug=True, use_reloader=True)

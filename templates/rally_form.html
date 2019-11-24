@@ -15,7 +15,7 @@
     <div class="container newContainer">
         <div class="row justify-content-center newContainer">
             <h1>Register a New Protest</h1>
-        </div>
+        </div> 
 
         <div class="row d-flex justify-content-center">
 
@@ -48,7 +48,7 @@
                 </div>
                 <div class="form-group">
                     <label for="url">URL</label>
-                    <input class="form-control" type="url" name="url" id="url" placeholder="url">
+                    <input class="form-control" type="url" name="url" id="url" placeholder="url" onblur="checkURL(this)">
                 </div>
                 <div class="form-group pb-3">
                     <label for="description">Description</label>
@@ -64,4 +64,14 @@
             <a href="/nearMe">Go Back</a>
         </div>
     </div>
+    <script>
+            function checkURL (abc) {
+                var string = abc.value;
+                if (!~string.indexOf("http")) {
+                  string = "http://" + string;
+                }
+                abc.value = string;
+                return abc
+              }
+    </script>
     {%include 'partials/footer.html'%}

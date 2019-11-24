@@ -77,9 +77,11 @@ def index():
     session["state"] = str(uuid.uuid4())
     return render_template('index.html')
 
+
 @app.route("/actions")
 def actions():
     return render_template('actions.html')
+
 
 @app.route("/rally_form")
 def rally_form():
@@ -189,41 +191,9 @@ def map_view():
 @app.route('/get_city', methods=['POST'])
 def get_city():
     city = request.form['city']
+    print(city + "!")
     session['location'] = city
     return redirect(url_for('map_view', location=city))
-
-
-@app.route('/newProtest', methods=['POST'])
-def new_protest():
-    title = request.form['title']
-    location = request.form['location']
-    response = geocode(address=location)
-    if not response:
-        return redirect(url_for('index'))
-    else:
-        response = response[0]
-    session['location'] = location
-    latitude = response['geometry']['location']['lat']
-    longitude = response['geometry']['location']['lng']
-    description = request.form['description']
-    date = request.form['date']
-    start_time = request.form['startTime']
-    end_time = request.form['endTime']
-    url = request.form['url']
-    _id = collection.count() + 1
-    collection.insert_one({
-        "_id": _id,
-        "title": title,
-        "lat": latitude,
-        "lng": longitude,
-        "confirm_count": 0,
-        "date": date,
-        "start_time": start_time,
-        "end_time": end_time,
-        "bio": description,
-        "url": url
-    })
-    return redirect(url_for('map_view', location=location))
 
 
 @app.route('/<path:path>')

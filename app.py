@@ -192,8 +192,7 @@ def get_city():
     print(city + "!")
     session['location'] = city
     return redirect(url_for('map_view', location=city))
-<<<<<<< HEAD
-    
+
 
 @app.route('/newProtest', methods=['POST'])
 def new_protest():
@@ -209,8 +208,8 @@ def new_protest():
     longitude = response['geometry']['location']['lng']
     description = request.form['description']
     date = request.form['date']
-    startTime = request.form['startTime']
-    endTime = request.form['endTime']
+    start_time = request.form['startTime']
+    end_time = request.form['endTime']
     url = request.form['url']
     _id = collection.count() + 1
     collection.insert_one({
@@ -220,14 +219,12 @@ def new_protest():
         "lng": longitude,
         "confirm_count": 0,
         "date": date,
-        "startTime": startTime,
-        "endTime": endTime,
+        "startTime": start_time,
+        "endTime": end_time,
         "bio": description,
         "url": url
     })
     return redirect(url_for('map_view', location=location))
-=======
->>>>>>> 481abd8922319f6ff3519fb9e3f475056bfe2358
 
 
 @app.route('/<path:path>')

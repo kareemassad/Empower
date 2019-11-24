@@ -51,11 +51,11 @@ p{
 #maps{
     /*  416ab6 > rgba(255, 255, 255, 0.664)//(#de6262, #ffb88c)// (#ffafbd, #ffc3a0)*/
     /* background-image: linear-gradient(#de6262 , #ffb88c); */
-    color: white;
+    color: white; 
 }
 .borderThang{
-    border: 2px solid black;
-}
+    border: 2px solid grey;
+} 
 .callSign{
     text-align: left;
 }

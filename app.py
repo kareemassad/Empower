@@ -184,7 +184,6 @@ def map_view():
         circlemap=circlemap,
         GOOGLEMAPS_KEY=request.args.get('apikey'),
         location=location,
-        db=collection
     )
 
 

@@ -12,4 +12,9 @@ textarea {
     background-color: #fff;
     font-size: 16px;
     resize: none;
+    box-shadow: 2px 2px;
+} 
+
+.form-control{
+    box-shadow: 2px 2px;
 }

@@ -4,10 +4,10 @@ We are living in times of incredible change and activism as millions of people a
 ## Getting Started
 1) clone the repository
 2) install the following dependencies:
-  - Flask
-  - pymongo
-  - googlemaps
-  - dnspython
+    - Flask
+    - pymongo
+    - googlemaps
+    - dnspython
 3) run `python3 app.py`
 4) Run localhost address given in terminal
 
@@ -20,8 +20,11 @@ We are living in times of incredible change and activism as millions of people a
 ## Images
 
 ![pic1](/static/images/pic1.png)
+
 ![pic2](/static/images/pic2.png)
+
 ![pic3](/static/images/pic3.png)
+
 ![pic4](/static/images/pic4.png)
 
 ## Authors

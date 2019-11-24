@@ -19,10 +19,10 @@ One Paragraph of project description goes here
 
 ## Images
 
-![pic1](images/pic1.png)
-![pic2](images/pic2.png)
-![pic3](images/pic3.png)
-![pic4](images/pic4.png)
+![pic1](static/images/pic1.png)
+![pic2](static/pic2.png)
+![pic3](static/pic3.png)
+![pic4](/static/pic4.png)
 
 ## Authors
 

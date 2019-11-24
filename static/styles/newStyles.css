@@ -1,3 +1,7 @@
 .newContainer {
     margin-top: 7%;
 }
+
+.textarea {
+    max-height: 500px;
+}

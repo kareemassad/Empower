@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename = 'styles/newStyles.css')}}">
-    
+
 </head>
 
 <body>
@@ -19,25 +19,32 @@
 
         <div class="row d-flex justify-content-center">
 
-            <form action="/nearMe" method="POST" style="width:50%">
+            <form action="/newProtest" method="POST" style="width:50%">
                 <div class="form-group">
                     <label for="title">Title of Protest</label>
-                    <input class="form-control" type="text" name="title" id="title" placeholder="Title">
+                    <input class="form-control" type="text" name="title" id="title" placeholder="Title" required>
                 </div>
                 <div class="form-group">
                     <label for="location">Location</label>
-                    <input class="form-control" type="text" name="location" id="location" placeholder="Location">
+                    <input class="form-control" type="text" name="location" id="location" placeholder="Location"
+                        required>
                 </div>
                 <div class="form-row mb-3">
                     <div class="col-sm">
                         <label for="date">Date</label>
-                        <input class="form-control" type="date" name="date" id="date" placeholder="Brief Description">
+                        <input class="form-control" type="date" name="date" id="date" placeholder="Brief Description"
+                            required>
                     </div>
                     <div class="col-sm">
                         <label for="title">Time</label>
                         <input class="form-control col-sm" type="time" name="time" id="time"
-                            placeholder="Brief Description">
+                            placeholder="Brief Description" required>
                     </div>
+                </div>
+                <div class="form-group">
+                    <label for="details">Details</label>
+                    <input class="form-control textarea" type="text" name="details" id="details" placeholder="Details"
+                        required>
                 </div>
                 <div class="form-group">
                     <button class="bn btn-lg btn-primary btn-block">Submit!</button>

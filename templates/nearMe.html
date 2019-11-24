@@ -65,7 +65,7 @@
                             <a class="nav-link" href="actions">Action</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="newProtest">Rally</a>
+                            <a class="nav-link" href="rally_form">Rally</a>
                         </li> 
                     </ul>
                 </div>
@@ -88,13 +88,19 @@
         <div class="container-fluidish">
             <div>
                 <h2 class="">Protests Near {{ location }}:</h2>
-                <button type="button" class="btn btn-light btn download-button buttonMargin" data-toggle="modal"data-target=".bd-example-modal"> Add an Event</button>
+                <button type="button" class="btn btn-light btn download-button buttonMargin" data-toggle="modal"data-target=".bd-example-modal"onclick="location.href='rally_form';"> Add an Event</button>
                 <div class="borderThang">
                     {{ circlemap.html }}
                 </div>
             </div>
         </div>
     </section>
+<<<<<<< Updated upstream
+=======
+    <!-- {% for item in db.find() %}
+    <p> <strong>{{ item['title'] }}:</strong> {{item['bio']}}</p>
+    {% endfor %} -->
+>>>>>>> Stashed changes
 </body>
 
 </html>

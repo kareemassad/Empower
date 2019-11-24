@@ -63,7 +63,10 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="action">Action</a>
-                        </li> 
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="newProtest">Rally</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -85,6 +88,7 @@
         <div class="container-fluidish">
             <div>
                 <h2 class="">Protests Near {{ location }}:</h2>
+                <button type="button" class="btn btn-light btn download-button buttonMargin" data-toggle="modal"data-target=".bd-example-modal"> Add an Event</button>
                 <div class="borderThang">
                     {{ circlemap.html }}
                 </div>
@@ -92,7 +96,7 @@
         </div>
     </section>
     {% for item in db.find() %}
-        <p> <strong>{{ item['title'] }}:</strong> {{item['bio']}}</p>
+    <p> <strong>{{ item['title'] }}:</strong> {{item['bio']}}</p>
     {% endfor %}
 </body>
 

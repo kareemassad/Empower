@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ url_for('static',filename = 'styles\actionStyles.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'styles/actionStyles.css')}}">
     <!--Favicon-->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- Font Awesome -->
@@ -59,132 +59,214 @@
 
 <body>
 
+    <section id="title">
+        <div class="container-fluid">
+            <!-- Nav Bar -->
+            <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
-    <div class="panel-group" id="accordion">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-                        2019 Hong Kong protests</a>
-                </h4>
-            </div>
-            <div id="collapse1" class="panel-collapse collapse in">
-                <div class="panel-body">The 2019 Hong Kong protests, also known as the Anti-Extradition Law Amendment
-                    Bill (or Anti-ELAB) movement,
-                    are an ongoing series of demonstrations in Hong Kong which were triggered by the introduction of the
-                    Fugitive Offenders amendment bill by the Hong Kong government.
-                    If enacted, the bill would have let local authorities detain and extradite criminal fugitives who
-                    are wanted
-                    in territories with which Hong Kong does not currently have extradition agreements, including Taiwan
-                    and
-                    mainland China.
-                    The extradition bill which triggered the first protest was introduced in April. It would have
-                    allowed for
-                    criminal suspects to be extradited to mainland China under certain circumstances.
-                    Opponents said this risked exposing Hong Kongers to unfair trials and violent treatment. They also
-                    argued
-                    the bill would give China greater influence over Hong Kong and could be used to target activists and
-                    journalists.
-                    <div>Source: CNN
-                        https://www.cnn.com/2019/11/23/asia/hong-kong-protester-shot-intv-intl-hnk/index.html</div>
-                    <div>Action: <a href="https://standwithhk.org/">Stand with Hong Kong</a></div>
+                <a href="#" class="navbar-brand">
+                    <!-- Logo Image -->
+                    <img src="static\images\newLogo.png" width="50" alt="empower_logo"
+                        class="d-inline-block align-middle mr-2">
+                    <!-- Logo Text -->
+                    <span class="text-uppercase font-weight-bold">Empower</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="basicExampleNav">
+
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-toggle="modal" data-target=".bd-example-modal-lg">Live
+                                Map</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="actions">Action</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/rally_form">Rally</a>
+                        </li>
+                    </ul>
                 </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-                        2019 France Protests</a>
-                </h4>
-            </div>
-            <div id="collapse2" class="panel-collapse collapse">
-                <div class="panel-body">Several thousand people marched in France on Saturday to protest against
-                    alarming levels of deadly domestic
-                    violence against women, which the president, Emmanuel Macron, has called “France’s shame”.
-                    The biggest rallies were in Paris. The streets of the capital became a sea of purple and white as
-                    thousands
-                    marched carrying banners, placards and flags calling for an end to femicide.
-                    About 30 marches have been organised throughout France. They involve nearly 70 organisations,
-                    political
-                    parties, unions and associations.
-                    French activists have stepped up efforts this year to call attention to the problem, with an unusual
-                    campaign of
-                    glueing posters around Paris and other cities every time another woman is killed.
-                    <div>Source: The Guardian
-                        https://www.theguardian.com/world/2019/nov/23/frances-shame-thousands-protest-gender-violence
+            </nav>
+    </section>
+    <div class="container-fluid align-items-center">
+        <h2>Rallies around the world</h2>
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                            2019 Hong Kong protests</a>
+                    </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse in">
+                    <div class="panel-body">The 2019 Hong Kong protests, also known as the Anti-Extradition Law
+                        Amendment
+                        Bill (or Anti-ELAB) movement,
+                        are an ongoing series of demonstrations in Hong Kong which were triggered by the
+                        introduction of
+                        the
+                        Fugitive Offenders amendment bill by the Hong Kong government.
+                        If enacted, the bill would have let local authorities detain and extradite criminal
+                        fugitives
+                        who
+                        are wanted
+                        in territories with which Hong Kong does not currently have extradition agreements,
+                        including
+                        Taiwan
+                        and
+                        mainland China.
+                        The extradition bill which triggered the first protest was introduced in April. It would
+                        have
+                        allowed for
+                        criminal suspects to be extradited to mainland China under certain circumstances.
+                        Opponents said this risked exposing Hong Kongers to unfair trials and violent treatment.
+                        They
+                        also
+                        argued
+                        the bill would give China greater influence over Hong Kong and could be used to target
+                        activists
+                        and
+                        journalists.
+                        <div>Source: CNN
+                            https://www.cnn.com/2019/11/23/asia/hong-kong-protester-shot-intv-intl-hnk/index.html
+                        </div>
+                        <div>Action: <a href="https://standwithhk.org/">Stand with Hong Kong</a></div>
                     </div>
-                    <div>Action: <a href="https://www.bnaibrith.ca/league">B’nai Brith</a></div>
                 </div>
             </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-                        2019 Chile Protests</a>
-                </h4>
-            </div>
-            <div id="collapse3" class="panel-collapse collapse">
-                <div class="panel-body">The suddenness of the protests, the anger that spilled onto the streets every
-                    day, might have been surprising anywhere. But in the country often lauded as Latin America’s great
-                    economic success story, it has shocked the world.
-                    For three weeks, Chile has been in upheaval. One day alone, more than a million people took to the
-                    streets of Santiago, the capital.
-                    Perhaps the only people not shocked are Chileans. In the chaos, they see a reckoning. The promise
-                    that political leaders from the left as well as right have made for decades — that free markets
-                    would lead to prosperity, and prosperity would take care of other problems — has failed them.
-                    “Chile woke up,” thousands of protesters chanted one recent Sunday afternoon in Santiago’s O’Higgins
-                    Park.
-                    <div>Source: New York Times
-                        https://www.nytimes.com/2019/11/03/world/americas/chile-protests.html</div>
-                    <div>Action: <a href="https://www.accionemprendedora.org/">Acción Emprendedora</a></div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                            2019 France Protests</a>
+                    </h4>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse">
+                    <div class="panel-body">Several thousand people marched in France on Saturday to protest against
+                        alarming levels of deadly domestic
+                        violence against women, which the president, Emmanuel Macron, has called “France’s shame”.
+                        The biggest rallies were in Paris. The streets of the capital became a sea of purple and
+                        white
+                        as
+                        thousands
+                        marched carrying banners, placards and flags calling for an end to femicide.
+                        About 30 marches have been organised throughout France. They involve nearly 70
+                        organisations,
+                        political
+                        parties, unions and associations.
+                        French activists have stepped up efforts this year to call attention to the problem, with an
+                        unusual
+                        campaign of
+                        glueing posters around Paris and other cities every time another woman is killed.
+                        <div>Source: The Guardian
+                            https://www.theguardian.com/world/2019/nov/23/frances-shame-thousands-protest-gender-violence
+                        </div>
+                        <div>Action: <a href="https://www.bnaibrith.ca/league">B’nai Brith</a></div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
-                        2019 Lebanese protests</a>
-                </h4>
-            </div>
-            <div id="collapse4" class="panel-collapse collapse">
-                <div class="panel-body">Lebanon's parliament has been postponed after demonstrators blocked roads and
-                    prevented politicians from arriving for a first session since protests erupted across the country
-                    last month.
-                    Tuesday's parliamentary session was delayed indefinitely "in light of the current extraordinary
-                    circumstances," according to a statement by Adnan Daher, the Secretary-General of the House of
-                    Representatives.
-                    This is the second time demonstrators have forced the Lebanese parliament to cancel a session since
-                    Prime Minister Saad Hariri announced his resignation at the end of October. Nationwide
-                    demonstrations have engulfed Lebanon since October 17 with protesters demanding an end to government
-                    corruption.
-                    <div>Source: CNN
-                        https://www.cnn.com/2019/11/19/middleeast/lebanon-protests-shut-parliament-intl/index.html</div>
-                    <div>Action: <a href="https://amel.org/">Amel Association International</a></div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                            2019 Chile Protests</a>
+                    </h4>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse">
+                    <div class="panel-body">The suddenness of the protests, the anger that spilled onto the streets
+                        every
+                        day, might have been surprising anywhere. But in the country often lauded as Latin America’s
+                        great
+                        economic success story, it has shocked the world.
+                        For three weeks, Chile has been in upheaval. One day alone, more than a million people took
+                        to
+                        the
+                        streets of Santiago, the capital.
+                        Perhaps the only people not shocked are Chileans. In the chaos, they see a reckoning. The
+                        promise
+                        that political leaders from the left as well as right have made for decades — that free
+                        markets
+                        would lead to prosperity, and prosperity would take care of other problems — has failed
+                        them.
+                        “Chile woke up,” thousands of protesters chanted one recent Sunday afternoon in Santiago’s
+                        O’Higgins
+                        Park.
+                        <div>Source: New York Times
+                            https://www.nytimes.com/2019/11/03/world/americas/chile-protests.html</div>
+                        <div>Action: <a href="https://www.accionemprendedora.org/">Acción Emprendedora</a></div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
-                        2019 Columbia protests</a>
-                </h4>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                            2019 Lebanese protests</a>
+                    </h4>
+                </div>
+                <div id="collapse4" class="panel-collapse collapse">
+                    <div class="panel-body">Lebanon's parliament has been postponed after demonstrators blocked
+                        roads
+                        and
+                        prevented politicians from arriving for a first session since protests erupted across the
+                        country
+                        last month.
+                        Tuesday's parliamentary session was delayed indefinitely "in light of the current
+                        extraordinary
+                        circumstances," according to a statement by Adnan Daher, the Secretary-General of the House
+                        of
+                        Representatives.
+                        This is the second time demonstrators have forced the Lebanese parliament to cancel a
+                        session
+                        since
+                        Prime Minister Saad Hariri announced his resignation at the end of October. Nationwide
+                        demonstrations have engulfed Lebanon since October 17 with protesters demanding an end to
+                        government
+                        corruption.
+                        <div>Source: CNN
+                            https://www.cnn.com/2019/11/19/middleeast/lebanon-protests-shut-parliament-intl/index.html
+                        </div>
+                        <div>Action: <a href="https://amel.org/">Amel Association International</a></div>
+                    </div>
+                </div>
             </div>
-            <div id="collapse5" class="panel-collapse collapse">
-                <div class="panel-body">More than 200,000 people took to the streets to show discontent over possible
-                    austerity measures.
-                    The protests were mostly peaceful but clashes between demonstrators and police broke out in cities
-                    including the capital, Bogotá, and Cali.
-                    There has been a surge in anti-government protests in Latin America.
-                    Colombian protesters are concerned about possible changes to the minimum wage, pension and tax
-                    reforms, and the privatisation of state companies. The government insists there are no planned
-                    pension or labour reforms and that any changes would take place in consultation with labour groups.
-                    <div>Source: BBC
-                        https://www.bbc.com/news/world-latin-america-50515216</div>
-                    <div>Action: <a href="https://www.funrestrepobarco.org.co/">Fundación Antonio Restrepo Barco</a></div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+                            2019 Columbia protests</a>
+                    </h4>
+                </div>
+                <div id="collapse5" class="panel-collapse collapse">
+                    <div class="panel-body">More than 200,000 people took to the streets to show discontent over
+                        possible
+                        austerity measures.
+                        The protests were mostly peaceful but clashes between demonstrators and police broke out in
+                        cities
+                        including the capital, Bogotá, and Cali.
+                        There has been a surge in anti-government protests in Latin America.
+                        Colombian protesters are concerned about possible changes to the minimum wage, pension and
+                        tax
+                        reforms, and the privatisation of state companies. The government insists there are no
+                        planned
+                        pension or labour reforms and that any changes would take place in consultation with labour
+                        groups.
+                        <div>Source: BBC
+                            https://www.bbc.com/news/world-latin-america-50515216</div>
+                        <div>Action: <a href="https://www.funrestrepobarco.org.co/">Fundación Antonio Restrepo
+                                Barco</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

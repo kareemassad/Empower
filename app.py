@@ -5,6 +5,7 @@ from flask_googlemaps import Map
 from googlemaps import convert
 import pymongo
 import googlemaps
+import random
 import uuid
 
 client = pymongo.MongoClient(
@@ -108,7 +109,8 @@ def new_rally():
     my_cursor = collection.find()
     for item in my_cursor:
         if item['lat'] == latitude and item['lng'] == longitude:
-            longitude += 0.0002
+            longitude += random.random()*0.001
+            latitude += random.random()*0.001
 
     _id = collection.count() + 1
     collection.insert_one({

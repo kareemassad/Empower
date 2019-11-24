@@ -79,6 +79,9 @@ def index():
     session["state"] = str(uuid.uuid4())
     return render_template('index.html')
 
+@app.route("/actions")
+def actions():
+    return render_template('actions.html')
 
 @app.route("/newProtest")
 def newProtest():

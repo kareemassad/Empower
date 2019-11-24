@@ -17,6 +17,13 @@ One Paragraph of project description goes here
 * [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) - Stores information about protests both geographical and informational.
 * [googlemaps API](https://developers.google.com/maps/documentation) - Used to generate a map and pin protest locations on said map.
 
+## Images
+
+![pic1](images/pic1.png)
+![pic2](images/pic2.png)
+![pic3](images/pic3.png)
+![pic4](images/pic4.png)
+
 ## Authors
 
 * **Kareem El Assad**

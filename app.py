@@ -95,7 +95,6 @@ def map_view():
     location = session['location']
     response = geocode(address=location, region='Canada')
     if not response:
-        print("INVALID ADDRESS")
         return redirect(url_for('index'))
     else:
         response = response[0]
@@ -142,7 +141,8 @@ def map_view():
         'nearMe.html',
         circlemap=circlemap,
         GOOGLEMAPS_KEY=request.args.get('apikey'),
-        location=location
+        location=location,
+        db=collection
     )
 
 

@@ -189,7 +189,6 @@ def map_view():
 @app.route('/get_city', methods=['POST'])
 def get_city():
     city = request.form['city']
-    print(city + "!")
     session['location'] = city
     return redirect(url_for('map_view', location=city))
 
@@ -219,8 +218,8 @@ def new_protest():
         "lng": longitude,
         "confirm_count": 0,
         "date": date,
-        "startTime": start_time,
-        "endTime": end_time,
+        "start_time": start_time,
+        "end_time": end_time,
         "bio": description,
         "url": url
     })

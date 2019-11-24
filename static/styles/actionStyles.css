@@ -1,3 +1,14 @@
+html {
+    max-height: 100%;
+    height: 100%;
+}
+body {
+    margin:0;
+   padding:0;
+   max-height: 100%;
+    height: 100%;
+}
+
 /* font-family: 'Lato', sans-serif;*/
 h1,
 h2,
@@ -27,7 +38,8 @@ p {
 
 /* Containers */
 .container-fluid {
-    padding: 3% 15% 7%;
+    padding: 3% 15% 0%;
+    
 }
 
 /* Navigation Bar */
@@ -84,6 +96,10 @@ form {
     border: 4px solid grey;
 }
 
+.form-group {
+    margin-bottom: 0;
+}
+
 /* Add some padding and a grey background color to containers */
 .container {
     padding: 10px 20px 10px 20px;
@@ -137,6 +153,8 @@ input[type=submit]:hover {
     height: 100%;
 }
 
+
+
 /* Media Queries */
 @media (max-width: 1028px) {
     #title {
@@ -155,7 +173,7 @@ input[type=submit]:hover {
     z-index: 20;
     position: fixed;
     display: inline-block;
-    float: left;
+
 }
 
 .modal {
@@ -165,3 +183,46 @@ input[type=submit]:hover {
 .modal-backdrop {
     z-index: 10;
 }
+.colorButton{
+    background-color:  #ffb88c;
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .activeCollapse, .collapsible:hover {
+    background-color: #ccc;
+  }
+  
+  /* Style the collapsible content. Note: hidden by default */
+  .content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+  }
+
+  .panel-title {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    margin-bottom: 0;
+
+  }

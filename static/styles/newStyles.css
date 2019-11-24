@@ -1,6 +1,20 @@
+#title{
+    color: impact;
+}
 .newContainer {
     margin-top: 3%;
+
 }
+
+.superCombine {
+    padding: 2% 2% 1% 2%;
+    border-radius: 25px;
+    border: 2px solid white;
+    position: sticky;
+    width: 60%;
+    text-align: center;
+}
+
 
 textarea {
     width: 100%;
@@ -9,16 +23,24 @@ textarea {
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 4px;
-    background-color: #fff;
+    background-color: #eee;
     font-size: 16px;
     resize: none;
     box-shadow: 2px 2px;
-} 
-
-.form-control{
-    box-shadow: 2px 2px;
+    position: relative;
+    border: 2px solid white;
 }
-.colorButton{
+body{
     background-color:  #ffb88c;
-    
+}
+
+.form-control {
+    box-shadow: 2px 2px;
+    background-color: #eee;
+    border: 2px solid white;
+}
+
+.colorButton {
+    background-color: white;
+    color: black;
 }

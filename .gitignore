@@ -45,4 +45,4 @@ venv
 
 /script.py
 /.vscode
-/flask_session
+/flask_session/

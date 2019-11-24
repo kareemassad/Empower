@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Actions</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'styles\actionStyles.css')}}">
+    <!--Favicon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/6ba355e457.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script></head>
+
+
+<div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"> 
+                2019 Hong Kong protests</a>
+            </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse in">
+            <div class="panel-body">The 2019 Hong Kong protests, also known as the Anti-Extradition Law Amendment Bill (or Anti-ELAB) movement,
+        are an ongoing series of demonstrations in Hong Kong which were triggered by the introduction of the
+        Fugitive Offenders amendment bill by the Hong Kong government.
+        If enacted, the bill would have let local authorities detain and extradite criminal fugitives who are wanted
+        in territories with which Hong Kong does not currently have extradition agreements, including Taiwan and
+        mainland China.
+        The extradition bill which triggered the first protest was introduced in April. It would have allowed for
+        criminal suspects to be extradited to mainland China under certain circumstances.
+        Opponents said this risked exposing Hong Kongers to unfair trials and violent treatment. They also argued
+        the bill would give China greater influence over Hong Kong and could be used to target activists and
+        journalists.
+
+        Source: CNN
+        https://www.cnn.com/2019/11/23/asia/hong-kong-protester-shot-intv-intl-hnk/index.html
+
+        Action: <a href="https://standwithhk.org/">link</a></div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"> 
+                2019 France Protests</a>
+            </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">Several thousand people marched in France on Saturday to protest against alarming levels of deadly domestic
+            violence against women, which the president, Emmanuel Macron, has called “France’s shame”.
+            The biggest rallies were in Paris. The streets of the capital became a sea of purple and white as thousands
+            marched carrying banners, placards and flags calling for an end to femicide.
+            About 30 marches have been organised throughout France. They involve nearly 70 organisations, political
+            parties, unions and associations.
+            French activists have stepped up efforts this year to call attention to the problem, with an unusual campaign of
+            glueing posters around Paris and other cities every time another woman is killed.
+                    
+            Source: The Guardian
+            https://www.theguardian.com/world/2019/nov/23/frances-shame-thousands-protest-gender-violence
+                    
+            Action: <a href="https://www.bnaibrith.ca/league">link</a>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3"> 
+                2019 Chile Protests</a>
+            </h4>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse">
+            <div class="panel-body">The suddenness of the protests, the anger that spilled onto the streets every day, might have been surprising anywhere. But in the country often lauded as Latin America’s great economic success story, it has shocked the world.
+            For three weeks, Chile has been in upheaval. One day alone, more than a million people took to the streets of Santiago, the capital.
+            Perhaps the only people not shocked are Chileans. In the chaos, they see a reckoning. The promise that political leaders from the left as well as right have made for decades — that free markets would lead to prosperity, and prosperity would take care of other problems — has failed them.
+            “Chile woke up,” thousands of protesters chanted one recent Sunday afternoon in Santiago’s O’Higgins Park.
+                    
+            Source: New York Times
+            https://www.nytimes.com/2019/11/03/world/americas/chile-protests.html
+
+            Action: <a href="https://www.accionemprendedora.org/">link</a>
+            </div>
+        </div>
+    </div>
+</div>

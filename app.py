@@ -118,7 +118,7 @@ def new_rally():
         "bio": description,
         "url": url
     })
-    return redirect(url_for('map_view', location=location))
+    return redirect(url_for('map_view'))
 
 
 @app.route("/enterCity")
@@ -190,9 +190,8 @@ def map_view():
 @app.route('/get_city', methods=['POST'])
 def get_city():
     city = request.form['city']
-    print(city + "!")
     session['location'] = city
-    return redirect(url_for('map_view', location=city))
+    return redirect(url_for('map_view'))
 
 
 @app.route('/<path:path>')

@@ -21,8 +21,6 @@ GoogleMaps(
     key=key
 )
 
-address = 'Moscow'
-
 
 def geocode(address=None, components=None, bounds=None, region=None,
             language=None):
@@ -81,7 +79,9 @@ def newProtest():
 
 @app.route("/nearMe")
 def map_view():
-    response = geocode(address=address, region='Canada')
+    # location = request.form['location']]
+    location = 'Iraq'
+    response = geocode(address=location, region='Canada')
     print(response)
     if not response:
         print("INVALID ADDRESS")
@@ -101,11 +101,14 @@ def map_view():
 
     my_cursor = collection.find()
     for item in my_cursor:
+        title = "<p><strong>{}</strong></p>"
+        par = "<p>{}</p>"
+        link = "<a href={}>Learn More</a>"
         markers.append({
-            "icon": '//maps.google.com/mapfiles/ms/icons/green-dot.png',
+            'icon': '//maps.google.com/mapfiles/ms/icons/green-dot.png',
             'lat': item['lat'],
             'lng': item['lng'],
-            'infobox': item['bio']
+            'infobox': title.format(item['title']) + par.format(item['bio']) + par.format(link.format(item['url']))
         })
         print(item)
 
@@ -131,23 +134,22 @@ def map_view():
 
 @app.route('/newProtest', methods=['POST'])
 def new_protest():
-    global address
     location = request.form['location']
     response = geocode(address=location)
     latitude = response['geometry']['location']['lat']
     longitude = response['geometry']['location']['lng']
-    bio = request.form['description']
+    description = request.form['description']
     date = request.form['date']
     time = request.form['time']
     collection.insert_one({
-        "_id": 1,
-        "name": request.form['title'],
+        "_id": _id,
+        "title": request.form['title'],
         "lat": latitude,
         "lng": longitude,
+        "confirm_count": 0,
         "date": date,
         "time": time,
-        "confirm_count": -2,
-        "Bio": description,
+        "bio": description,
         "url": url
     })
     return redirect(url_for('map_view'))

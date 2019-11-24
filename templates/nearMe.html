@@ -91,6 +91,9 @@
             </div>
         </div>
     </section>
+    {% for item in db.find() %}
+        <p> <strong>{{ item['title'] }}:</strong> {{item['bio']}}</p>
+    {% endfor %}
 </body>
 
 </html>

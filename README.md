@@ -1,6 +1,8 @@
 # Empower
 We are living in times of incredible change and activism as millions of people around the world strive to make the world a better place by utilizing the strength of community to come together and stand up for themselves and what they believe in in organized rallies. However, it can be incredibly difficult to find ways to participate in these events due to a lack of solid information about the protests in your area. Empower is a web app that allows users to post ongoing and upcoming protests to our platform where their information will be stored with MongoDB Atlas. That information is immediately placed as a pin on a dynamic map using google maps. It is very easy for users to quickly find and identify rallies taking place in their area. Additionally, Empower has a global outreach tab where you can recieve centralized, reliable information about major rallies taking place around the world. On this page is located helpful links so that users can aid the protestors from the comfort of their home.
 
+Check it out: http://empower.eastus.cloudapp.azure.com:5000/
+
 ## Getting Started
 1) clone the repository
 2) install the following dependencies:
